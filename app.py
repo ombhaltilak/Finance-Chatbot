@@ -56,7 +56,7 @@ def setup_rag_chain(csv_path):
         "text2text-generation",
         model=model,
         tokenizer=tokenizer,
-        max_length=1000
+        max_length=100
     )
     llm = HuggingFacePipeline(pipeline=pipe)
 
@@ -124,5 +124,6 @@ if prompt := st.chat_input("Ask a question about your finances..."):
                     st.session_state.messages.append({"role": "assistant", "content": error_message})
             else:
                 st.error("Chatbot is not initialized. Please check the knowledge base file.")
+
 
 
