@@ -35,9 +35,7 @@ The chatbot features a clean, interactive web interface built with Streamlit, su
 
 ---
 
-## 🚀 Live Demo
-https://finance-chatbot-cmm6gzmnncvqxt3puqwocw.streamlit.app/
----
+
 
 ## ⚙️ How It Works (RAG Architecture)
 
