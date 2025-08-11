@@ -125,3 +125,4 @@ if prompt := st.chat_input("Ask a question about your finances..."):
             else:
                 st.error("Chatbot is not initialized. Please check the knowledge base file.")
 
+
