@@ -80,7 +80,7 @@ The chatbot operates as an "open-book exam":
 └── README.md # This documentation file
 ```
 
-
+---
 ## 📦 Setup & Installation
 
 1. **Clone the repository:**
@@ -89,6 +89,10 @@ The chatbot operates as an "open-book exam":
    git clone <your-repo-url>
    cd <your-repo-name>
 
+
+
+---
+
 ## Create and activate a virtual environment (recommended):
 
 
@@ -96,12 +100,18 @@ python -m venv venv
 source venv/bin/activate     # On Windows: venv\Scripts\activate
 
 
+
+---
+
 ## Install dependencies:
 
 pip install -r requirements.txt
 
 
-# ▶️ How to Run
+
+---
+
+## ▶️ How to Run
 Make sure your knowledge base file finance_knowledge_base.csv is located in the project root directory.
 
 Run the Streamlit app:
@@ -110,5 +120,5 @@ Run the Streamlit app:
 streamlit run app.py
 Open your web browser at the URL provided by Streamlit (typically http://localhost:8501).
 
-
+---
 ## Enjoy building with GenAI Finance Chatbot! 🚀
