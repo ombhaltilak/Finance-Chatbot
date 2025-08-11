@@ -1,5 +1,7 @@
-streamlit==1.24.1
-llama-index==0.6.15
-langchain==0.0.210
-
-
+streamlit
+pandas
+langchain
+faiss-cpu
+sentence-transformers
+transformers
+torch
