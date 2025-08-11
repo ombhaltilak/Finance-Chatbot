@@ -72,12 +72,13 @@ The chatbot operates as an "open-book exam":
 ---
 
 ## 📂 Project Structure
+```plaintext
 
 ├── app.py # Main Streamlit application script
 ├── finance_knowledge_base.csv # Custom knowledge base CSV file
 ├── requirements.txt # Python dependencies
 └── README.md # This documentation file
-
+```
 
 
 ## 📦 Setup & Installation
