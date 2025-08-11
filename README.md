@@ -1,96 +1,75 @@
-🤖 GenAI Finance Chatbot
+# 🤖 GenAI Finance Chatbot
+
 <p align="center">
-<img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
-<img src="https://img.shields.io/badge/Streamlit-1.25%2B-orange?style=for-the-badge&logo=streamlit" alt="Streamlit Version">
-<img src="https://img.shields.io/badge/LangChain-0.0.300%2B-green?style=for-the-badge" alt="LangChain Version">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python" alt="Python Version" />
+  <img src="https://img.shields.io/badge/Streamlit-1.25%2B-orange?style=for-the-badge&logo=streamlit" alt="Streamlit Version" />
+  <img src="https://img.shields.io/badge/LangChain-0.0.300%2B-green?style=for-the-badge" alt="LangChain Version" />
 </p>
 
-An intelligent, conversational AI chatbot designed to answer questions about financial data. This project uses a Retrieval-Augmented Generation (RAG) architecture to provide accurate, context-aware answers based on a custom knowledge base provided in a CSV file.
+---
 
-The application is built with a user-friendly web interface using Streamlit, allowing for interactive and persistent chat sessions.
+## Overview
 
-🌟 Key Features
-💬 Interactive Chat Interface: A clean and simple UI built with Streamlit for a natural conversational experience.
+**GenAI Finance Chatbot** is an intelligent, conversational AI chatbot designed to answer questions about financial data. It employs a Retrieval-Augmented Generation (RAG) architecture to provide accurate, context-aware responses based solely on a custom knowledge base contained in a CSV file.
 
-📚 Custom Knowledge Base: Answers questions based only on the information provided in your own CSV file.
+The chatbot features a clean, interactive web interface built with Streamlit, supporting persistent chat sessions for a natural conversational experience.
 
-🎯 High Accuracy: Leverages the RAG model to minimize "hallucinations" (incorrect or made-up answers) by grounding responses in the source documents.
+---
 
-🔄 Persistent Conversation: Remembers the chat history for the duration of the session.
+## 🌟 Key Features
 
-🔧 Easy to Customize: Simply replace the sample CSV file with your own data to create a chatbot for any domain.
+- 💬 **Interactive Chat Interface**  
+  A clean and simple UI built with Streamlit for a natural conversational experience.
 
-🚀 Live Demo
-(Optional: You can record a short GIF of the app in action and place it here)
+- 📚 **Custom Knowledge Base**  
+  Answers questions based only on the information provided in your own CSV file.
 
-🛠️ How It Works (RAG Architecture)
-The chatbot does not rely on pre-trained knowledge for its specific answers. Instead, it follows an "open-book exam" process:
+- 🎯 **High Accuracy**  
+  Uses RAG to minimize hallucinations by grounding responses in source documents.
 
-Load & Index: The application starts by reading the finance_knowledge_base.csv file using Pandas. Each question-answer pair is then converted into a numerical representation (embedding) using Sentence-Transformers. These embeddings are stored in a highly efficient FAISS vector index.
+- 🔄 **Persistent Conversation**  
+  Remembers chat history during the session for continuity.
 
-Retrieve: When you ask a question, the system converts your query into an embedding and uses FAISS to find the most semantically similar Q&A pairs from the knowledge base.
+- 🔧 **Easy to Customize**  
+  Replace the sample CSV file to tailor the chatbot to any domain.
 
-Generate: The original question and the retrieved context are passed to a Large Language Model (google/flan-t5-base via the Transformers library). The model then generates a human-readable answer based only on the provided information.
+---
 
-Orchestration: The entire pipeline—from data loading to response generation—is managed and connected using the LangChain framework.
+## 🚀 Live Demo
 
-⚙️ Core Technologies
-This project is built with the following key libraries:
+*(Optional: Add a GIF or link to a live demo here)*
 
-streamlit: For creating the interactive web application and user interface.
+---
 
-pandas: For loading and parsing the CSV knowledge base.
+## ⚙️ How It Works (RAG Architecture)
 
-langchain: The core framework for orchestrating the RAG pipeline.
+The chatbot operates as an "open-book exam":
 
-faiss-cpu: For creating the efficient in-memory vector store.
+1. **Load & Index**  
+   Loads `finance_knowledge_base.csv` using Pandas, converts question-answer pairs into embeddings with Sentence-Transformers, and stores them in a FAISS vector index.
 
-sentence-transformers: For generating the text embeddings.
+2. **Retrieve**  
+   Converts user queries into embeddings and retrieves semantically similar Q&A pairs using FAISS.
 
-transformers: For loading and running the open-source language model from Hugging Face.
+3. **Generate**  
+   Feeds the query and retrieved context into a language model (`google/flan-t5-base`) via Transformers to generate human-readable answers grounded in the knowledge base.
 
-torch: The underlying deep learning framework required by transformers.
+4. **Orchestration**  
+   The entire flow is managed using LangChain to seamlessly connect all components.
 
-📂 Project Structure
-.
-├── 📄 app.py                    # Main Streamlit application script
-├── 📄 finance_knowledge_base.csv  # Your custom knowledge base
-├── 📄 requirements.txt           # Python dependencies
-└── 📄 README.md                   # This file
+---
 
-📦 Setup & Installation
-Clone the repository:
+## ⚙️ Core Technologies
 
-git clone <your-repo-url>
-cd <your-repo-name>
+- **[Streamlit](https://streamlit.io/)** — Web app UI  
+- **[Pandas](https://pandas.pydata.org/)** — Data loading and parsing  
+- **[LangChain](https://github.com/hwchase17/langchain)** — RAG pipeline orchestration  
+- **[FAISS](https://github.com/facebookresearch/faiss)** — Vector similarity search  
+- **[Sentence-Transformers](https://www.sbert.net/)** — Text embeddings  
+- **[Transformers](https://huggingface.co/transformers/)** — Language model inference  
+- **[PyTorch](https://pytorch.org/)** — Deep learning backend  
 
-Create a virtual environment (recommended):
+---
 
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+## 📂 Project Structure
 
-Install the required packages:
-
-pip install -r requirements.txt
-
-▶️ How to Run
-Make sure your knowledge base file, finance_knowledge_base.csv, is in the root directory of the project.
-
-Run the Streamlit application from your terminal:
-
-streamlit run app.py
-
-Open your web browser to the local URL provided by Streamlit.
-
-🤝 Contributing
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to fork the repository and submit a pull request.
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
