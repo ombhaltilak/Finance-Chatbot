@@ -157,3 +157,27 @@ if prompt := st.chat_input("Ask a question about your finances..."):
 # if month:
 #     print(f"{month}\t{total/count:.2f}")
 
+
+
+hdfs dfs -mkdir /loginput
+hdfs dfs -put log.txt /loginput/
+
+hadoop jar %HADOOP_HOME%/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+-input /loginput \
+-output /logoutput \
+-mapper "python mapper.py" \
+-reducer "python reducer.py" \
+-file mapper.py \
+-file reducer.py
+
+
+hdfs dfs -put forestfires.csv /user/hduser/input/
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming*.jar \
+  -input /user/hduser/input/forestfires.csv \
+  -output /user/hduser/output/ \
+  -mapper "python3 mapper.py" \
+  -reducer "python3 reducer.py" \
+  -file mapper.py -file reducer.py
+
+
+
