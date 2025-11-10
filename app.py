@@ -156,3 +156,4 @@ if prompt := st.chat_input("Ask a question about your finances..."):
 
 # if month:
 #     print(f"{month}\t{total/count:.2f}")
+
