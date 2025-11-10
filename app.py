@@ -127,3 +127,32 @@ if prompt := st.chat_input("Ask a question about your finances..."):
 
 
 
+
+
+
+
+
+
+# import sys
+# for line in sys.stdin:
+#     if not line.startswith("X,"):  # skip header
+#         parts = line.strip().split(",")
+#         if len(parts) > 8:
+#             print(f"{parts[2]}\t{parts[8]}")
+
+
+# import sys
+# month, total, count = None, 0, 0
+
+# for line in sys.stdin:
+#     m, t = line.strip().split("\t")
+#     t = float(t)
+#     if m == month:
+#         total += t; count += 1
+#     else:
+#         if month:
+#             print(f"{month}\t{total/count:.2f}")
+#         month, total, count = m, t, 1
+
+# if month:
+#     print(f"{month}\t{total/count:.2f}")
